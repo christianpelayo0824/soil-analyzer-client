@@ -1,0 +1,123 @@
+@font-face {
+	font-family: "Varela-Round";
+	src: url("../fonts/Montserrat-Light.ttf");
+}
+
+* {
+	font-family: "Varela-Round";
+}
+
+html, body {
+	/*background-color: #1c1c1c!important;*/
+	background:url("../1.jpg") no-repeat bottom!important;
+	background-size: cover!important;
+	height: 100%;
+	background-attachment: fixed!important;
+    /*background-position: center;*/
+}
+.tableContainer {
+	overflow-y: scroll;
+	height: 550px;
+	border: 5px solid #000;
+}
+.bg-custom {
+	position: relative;
+	text-align: center;
+	align-content: center;
+	top: 25vh;
+}
+#mainCard {
+	position: relative;
+	top: 25vh;
+	color: #FEFEFE;
+	/*width: 500px;
+	height: 200px;*/
+	margin: auto;
+	background-color: #333333;
+	border-radius: 8px;
+	opacity: .6;
+	height: 350px;
+}
+#secondCard {
+	/*position: relative;
+	top: 25vh;*/
+	color: #FEFEFE;
+	/*width: 500px;
+	height: 200px;*/
+	opacity: .7;
+	margin: auto;
+	background-color: #333333;
+	border-radius: 8px;
+	/*height: 300px;*/
+}
+table tr th, table tr td{
+	font-size: 1.2rem;
+}
+.row{ margin:20px 20px 20px 20px;
+	width: 100%;
+}
+.glyphicon{
+	font-size: 20px;
+}
+.glyphicon-plus{
+	float: right;
+}
+a.glyphicon{
+	text-decoration: none;
+	cursor: pointer;
+}
+.glyphicon-trash{
+	margin-left: 10px;
+}
+
+.alert{
+    width: 50%;
+    border-radius: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+ul .linebar {
+	margin: 0!important;
+}
+.linebar {
+	margin: 10px;
+	width: 100px;
+	background-color: #FFE400;
+}
+
+#analyzeBtn {
+	height: 130px;
+	width: 500px;
+	border: 0px;
+	font-size: 40px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#myBar {
+	width: 10%;
+	height: 30px;
+	background-color: #4CAF50;
+	text-align: center; /* To center it horizontally (if you want) */
+	line-height: 30px; /* To center it vertically */
+	color: white; 
+}

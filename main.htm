@@ -1,0 +1,118 @@
+<div class="container-fluid" ng-init="getTemp()">
+	<div class="card shadow mx-auto w-50 mw-50" id="mainCard">
+		<div class="card-header w-100 mx-auto p-3">
+			<div class="dropdown text-center card-title mx-auto w-100">
+				<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModalForm">+</button>
+				<p class=" text-right" style="color: #B0B0B0; padding-right: 10%; font-size: 1.3em;">Add Plant </p>
+			</div>
+		</div>
+		<div class="card-body text-center">
+			<!-- <p class="display-3 text-center mt-4 mb-1">{{phvalue}}<span style="color: #B0B0B0">pH Level</span></p>
+			<p class="lead text-center" style="color: #00F0C5">Suggested plants within its range</p>
+			<a href="#!secondpage" class="btn btn-primary">Click to view</a> -->
+			<button class="btn btn-primary" id="analyzeBtn" ng-click="getLatestData()">Click to Analyze</button>
+			<br>
+			<br>
+			<div id="myProgress">
+				<div id="myBar">10%</div>
+			</div>
+		</div>
+	</div>
+	<!-- </div> -->
+
+	<!-- The Modal -->
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Plants Recommendation</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<!-- Modal body.. -->
+					<div class="panel-body none formData">
+						<form class="form" name="userForm">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label>pH Data</label>
+										<input type="text" class="form-control" name="name" ng-disabled="true" placeholder="" ng-model="phpData.phpSensor">
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label>Voltage</label>
+										<input type="text" class="form-control" name="email" ng-disabled="true" ng-model="phpData.voltage" />
+									</div>
+								</div>
+							</div>
+							<div>
+								<table style="width:100%">
+									<tr>
+										<th>#</th>
+										<th>Name</th>
+										<th>Minimun</th>
+										<th>Miximum</th>
+									</tr>
+									<tr ng-repeat="plant in plants">
+										<td>{{$index + 1}}</td>
+										<td>{{plant.plant}}</td>
+										<td>{{plant.min}}</td>
+										<td>{{plant.max}}</td>
+									</tr>
+								</table>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- ----- -->
+	<!-- The Modal -->
+	<div class="modal fade" id="myModalForm">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Plants Recommendation</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<!-- Modal body.. -->
+					<div class="panel-body none formData">
+						<form class="form" name="userForm">
+							<div class="form-group">
+								<label>Plant name</label>
+								<input type="text" class="form-control" name="plant" ng-model="plants.plant"/>
+								<label>Maximun pH Level</label>
+								<input type="number" class="form-control" name="max" ng-model="plants.max"/>
+								<label>Manimun pH Level</label>
+								<input type="number" class="form-control" name="min" ng-model="plants.min"/>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="savePlant(plants)">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
